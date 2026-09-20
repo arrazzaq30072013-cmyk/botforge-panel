@@ -89,26 +89,16 @@ db.load();
 
 // local runner: restart processes for services that run on our own site
 runner.restoreAll().catch(e => console.warn('[runner] restore failed:', e.message));
-
-const server = app.listen(config.port, '0.0.0.0', () => {
-  console.log('─'.repeat(60));
-  console.log(`  ⚒️  ${config.brand.name} v${config.brand.version} — ${config.brand.tagline}`);
-  console.log(`  🌐  listening on http://0.0.0.0:${config.port}`);
-  console.log(`  📦  data dir: ${config.dataDir}`);
-  console.log(`  ${config.isProd ? '🚀' : '🛠️ '}  environment: ${config.nodeEnv}`);
-  console.log('─'.repeat(60));
-});
-
-pinger.start(db);
-
-// graceful shutdown
-function shutdown() {
-  console.log('Shutting down…');
-  try { runner.stopAll(); } catch (e) { console.warn('[runner] stopAll failed:', e.message); }
-  server.close(() => process.exit(0));
-  setTimeout(() => process.exit(0), 4000).unref();
+let server;
+if (require.main === module) {
+  server = app.listen(config.port, '0.0.0.0', () => {
+    console.log('-'.repeat(60));
+    console.log(`  ${config.brand.name} v${config.brand.version}`);
+    console.log(`  listening on http://0.0.0.0:${config.port}`);
+    console.log(`  data dir: ${config.dataDir}`);
+    console.log('-'.repeat(60));
+  });
+  pinger.start(db);
 }
-process.on('SIGTERM', shutdown);
-process.on('SIGINT', shutdown);
 
 module.exports = app;
