@@ -1,0 +1,41 @@
+databases:
+  - name: botforge-db
+    databaseName: botforge
+    user: botforge
+    plan: free
+
+services:
+  # ─────────────────────────────────────────────
+  # BotForge — the hosting platform itself
+  # ─────────────────────────────────────────────
+  - type: web
+    name: botforge
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      - key: DATA_DIR
+        value: /var/data/botforge
+      - key: PINGER_ENABLED
+        value: "true"
+      - key: PING_INTERVAL
+        value: "240"
+      # After first deploy, set this to your BotForge URL so the
+      # platform keeps itself awake on the free tier:
+      # - key: SELF_PING_URL
+      #   value: https://botforge.onrender.com
+    disk:
+      name: botforge-data
+      mountPath: /var/data
+      sizeGB: 1

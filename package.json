@@ -1,0 +1,31 @@
+{
+  "name": "botforge",
+  "version": "1.0.0",
+  "description": "BotForge — self-hosted bot hosting platform for Render. Deploy and manage WhatsApp, Discord and Telegram bots (including KnightBot-Mini) with one click.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "bot hosting",
+    "render",
+    "whatsapp bot",
+    "knightbot",
+    "baileys",
+    "discord bot",
+    "telegram bot",
+    "deploy"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "qrcode": "^1.5.4"
+  }
+}
