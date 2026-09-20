@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BotForge — Bot Hosting Platform for Render</title>
+  <meta name="description" content="Self-hosted bot hosting platform. Deploy WhatsApp, Discord & Telegram bots (including KnightBot) to Render in seconds — with live logs, QR pairing, env management and 24/7 keep-alive.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚒️%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="brand" data-link>
+        <span class="brand-mark">⚒️</span>
+        <span class="brand-name">BotForge</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/#features" data-link>Features</a>
+        <a href="/#templates" data-link>Templates</a>
+        <a href="/#how" data-link>How it works</a>
+        <a href="/#pricing" data-link>Pricing</a>
+        <a href="/docs" data-link>Docs</a>
+      </div>
+      <div class="nav-actions" id="navActions">
+        <a href="/login" class="btn btn-ghost btn-sm" data-link>Login</a>
+        <a href="/register" class="btn btn-primary btn-sm" data-link>Get started</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="app">
+    <div class="spin-lg"></div>
+  </main>
+
+  <footer class="footer hidden" id="footer">
+    <div class="container footer-inner">
+      <div>
+        <a href="/" class="brand" data-link style="font-size:1.05rem">
+          <span class="brand-mark" style="width:28px;height:28px;font-size:15px">⚒️</span>
+          <span class="brand-name">BotForge</span>
+        </a>
+        <p class="muted mt-1">Deploy bots to Render in seconds. Self-hosted, free forever.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/#templates" data-link>Templates</a>
+        <a href="/docs" data-link>Docs</a>
+        <a href="/#faq" data-link>FAQ</a>
+        <a href="https://render.com" target="_blank" rel="noopener">Render ↗</a>
+        <a href="https://github.com/mruniquehacker/KnightBot-Mini" target="_blank" rel="noopener">KnightBot ↗</a>
+      </div>
+    </div>
+    <div class="container mt-2 muted small">© <span id="year"></span> BotForge — built for bot developers. Not affiliated with Render or WhatsApp.</div>
+  </footer>
+
+  <div id="toasts"></div>
+
+  <script src="/js/app.js?v=1.0.0"></script>
+  <script src="/js/pages/landing.js?v=1.0.0"></script>
+  <script src="/js/pages/auth.js?v=1.0.0"></script>
+  <script src="/js/pages/dashboard.js?v=1.0.0"></script>
+  <script src="/js/pages/deploy.js?v=1.0.0"></script>
+  <script src="/js/pages/service.js?v=1.0.0"></script>
+  <script src="/js/pages/settings.js?v=1.0.0"></script>
+  <script src="/js/pages/admin.js?v=1.0.0"></script>
+  <script src="/js/pages/docs.js?v=1.0.0"></script>
+  <script src="/js/boot.js?v=1.0.0"></script>
+</body>
+</html>
